@@ -1,0 +1,21 @@
+﻿ @model BanSua4CE.Data.VnPay
+
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4 border-success">
+        <div class="card-header bg-success text-white text-center py-3">
+            <h3>🎉 Thanh toán thành công qua VNPay!</h3>
+        </div>
+        <div class="card-body fs-5">
+            <p><strong>🧾 Mã đơn hàng:</strong> <span class="text-primary">@Model.OrderId</span></p>
+            <p><strong>📄 Thông tin đơn hàng:</strong> @Model.OrderDescription</p>
+            <p><strong>💰 Phương thức thanh toán:</strong> <span class="text-success">@Model.PaymentMethod</span></p>
+            <p><strong>🔢 Mã giao dịch (VNPay):</strong> <code class="text-dark">@Model.TransactionId</code></p>
+            <p><strong>📅 Ngày tạo:</strong> <span class="text-info">@Model.DatedCreated</span></p>
+         </div>
+        <div class="card-footer text-center">
+            <a href="/" class="btn btn-primary me-2">🏠 Về trang chủ</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/bansua4ce/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsShopSua4ce_CBB505B2F2",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/shopbansuadbserver/databases/shopbansua",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:ShopSua4ce"
+    }
+  }
+}
