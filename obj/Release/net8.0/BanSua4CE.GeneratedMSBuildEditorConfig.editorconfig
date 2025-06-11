@@ -1,0 +1,183 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BanSua4CE
+build_property.RootNamespace = BanSua4CE
+build_property.ProjectDir = D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/Loi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xMb2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/PaymentFail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xQYXltZW50RmFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/ThanhCong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xUaGFuaENvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/ThanhToan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xUaGFuaFRvYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/GioHang/TrangGioHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lvSGFuZ1xUcmFuZ0dpb0hhbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/GioiThieu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaW9pVGhpZXUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Product/ChiTietSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDaGlUaWV0U2FuUGhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Product/SanPhamTheoDM.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTYW5QaGFtVGhlb0RNLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Product/TimKiemSP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxUaW1LaWVtU1AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLDM/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxETVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLDM/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxETVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLDM/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxETVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLDM/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxETVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLDM/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxETVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLND/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxORFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLND/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxORFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLND/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxORFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLND/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxORFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLND/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxORFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLSP/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxTUFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLSP/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxTUFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLSP/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxTUFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLSP/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxTUFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/QLSP/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUUxTUFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/Components/DanhMucSp/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRGFuaE11Y1NwXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/TaiKhoan/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cRGFuZ0t5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/TaiKhoan/DangNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cRGFuZ05oYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/TaiKhoan/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpS2hvYW5cUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fstwx83yly
