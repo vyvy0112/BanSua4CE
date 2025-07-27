@@ -8,11 +8,14 @@
 
         public string? HinhAnh { get; set; }
 
-        public double DonGia { get; set; } 
+        public double DonGia { get; set; }
 
+        //public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
 
         public double ThanhTien => DonGia * SoLuong;
+
+        //public decimal ThanhTien => DonGia * SoLuong;
 
         public int? IdSp { get; set; }
 

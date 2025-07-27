@@ -15,5 +15,5 @@ public partial class VnPay
 
     public string? PaymentMethod { get; set; }
 
-    public DateTime? DatedCreated { get; set; } = DateTime.Now;
+    public DateTime? DatedCreated { get; set; }
 }

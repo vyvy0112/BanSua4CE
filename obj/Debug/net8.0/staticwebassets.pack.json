@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\PNG\\logo.png"
     },
     {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\chinhsachbaohanh.html",
+      "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\chinhsachbaohanh.html"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\chinhsachbaomat.html",
+      "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\chinhsachbaomat.html"
+    },
+    {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\lienket\\components\\footer.html",
       "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\lienket\\components\\footer.html"
     },
@@ -83,6 +91,18 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\pages\\timkiem.html",
       "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\pages\\timkiem.html"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\phuongthucgiaohang.html",
+      "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\phuongthucgiaohang.html"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\phuongthucthanhtoan.html",
+      "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\phuongthucthanhtoan.html"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\quydinhdoitra.html",
+      "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\quydinhdoitra.html"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\sanpham\\allproduct.html",
@@ -207,10 +227,6 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\friso4_900g.jpg",
       "PackagePath": "staticwebassets\\hinhanh\\friso4_900g.jpg"
-    },
-    {
-      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\frisogold.jpg",
-      "PackagePath": "staticwebassets\\hinhanh\\frisogold.jpg"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\grow3_900g.jpg",

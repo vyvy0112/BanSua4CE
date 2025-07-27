@@ -14,6 +14,45 @@
         text-align: center;
     }
 
+    /* --- Form lọc --- */
+    .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 180px;
+    }
+
+    .filter-label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .filter-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .filter-control {
+        padding: 6px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    /* --- Table chính --- */
     .main-table {
         width: 100%;
         border-collapse: collapse;
@@ -24,18 +63,18 @@
         box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
-        .main-table th, .main-table td {
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            vertical-align: middle;
-        }
+    .main-table th, .main-table td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        vertical-align: middle;
+    }
 
-        .main-table th {
-            background-color: #f8f9fa;
-            text-align: center;
-            font-weight: bold;
-            color: #333;
-        }
+    .main-table th {
+        background-color: #f8f9fa;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+    }
 
     .col-center {
         text-align: center;
@@ -46,6 +85,7 @@
         text-align: left;
     }
 
+    /* --- Table sản phẩm --- */
     .sub-table {
         width: 100%;
         border-collapse: collapse;
@@ -54,17 +94,17 @@
         font-size: 14px;
     }
 
-        .sub-table th, .sub-table td {
-            border: 1px solid #eee;
-            padding: 8px 10px;
-            text-align: center;
-        }
+    .sub-table th, .sub-table td {
+        border: 1px solid #eee;
+        padding: 8px 10px;
+        text-align: center;
+    }
 
-        .sub-table th {
-            background-color: #f0f0f0;
-            font-weight: 600;
-            color: #333;
-        }
+    .sub-table th {
+        background-color: #f0f0f0;
+        font-weight: 600;
+        color: #333;
+    }
 
     .product-image {
         max-width: 80px;
@@ -76,8 +116,10 @@
     .table-wrapper {
         max-width: 1200px;
         margin: 0 auto;
+        overflow-x: auto; /* Cho phép cuộn ngang trên màn nhỏ */
     }
 
+    /* Badge trạng thái */
     .badge {
         display: inline-block;
         padding: 5px 12px;
@@ -88,29 +130,53 @@
         color: #fff;
     }
 
-    .badge-paid {
-        background-color: #28a745; /* xanh lá */
+    .badge-paid { background-color: #28a745; }
+    .badge-processing { background-color: #ffc107; color: #212529; }
+    .badge-shipping { background-color: #17a2b8; }
+    .badge-delivered { background-color: #007bff; }
+    .badge-cancelled { background-color: #dc3545; }
+    .badge-refunded { background-color: #6c757d; }
+
+    /* --- Responsive --- */
+    @@media (max-width: 768px) {
+        .filter-form {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+        }
+
+        .filter-group {
+            min-width: 100%;
+        }
+
+        .main-table th, .main-table td {
+            font-size: 13px;
+            padding: 8px;
+        }
+
+        .sub-table th, .sub-table td {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        .table-wrapper {
+            padding: 0 5px;
+        }
     }
 
-    .badge-processing {
-        background-color: #ffc107; /* vàng */
-        color: #212529;
-    }
+    @@media (max-width: 480px) {
+        h2 {
+            font-size: 20px;
+        }
 
-    .badge-shipping {
-        background-color: #17a2b8; /* xanh dương nhạt */
-    }
+        .filter-form {
+            padding: 10px;
+        }
 
-    .badge-delivered {
-        background-color: #007bff; /* xanh đậm */
-    }
-
-    .badge-cancelled {
-        background-color: #dc3545; /* đỏ */
-    }
-
-    .badge-refunded {
-        background-color: #6c757d; /* xám */
+        .filter-actions button,
+        .filter-actions a {
+            width: 100%;
+        }
     }
 </style>
 
@@ -124,6 +190,53 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Đóng"></button>
         </div>
     }
+
+
+   
+    @* <form asp-action="QLDonHang" method="get" class="mb-3 d-flex" style="gap: 10px;">
+    <select name="trangThai" class="form-control" style="width: 200px;">
+        <option value="" >-- Tất cả trạng thái --</option>
+        <option value="Chờ xác nhận" >Chờ xác nhận</option>
+        <option value="Đang xử lý" >Đang xử lý</option>
+        <option value="Đang giao" >Đang giao</option>
+        <option value="Đã thanh toán" >Đã thanh toán</option>
+        <option value="Hoàn tiền" >Hoàn tiền</option>
+        <option value="Đã hủy">Đã hủy</option>
+    </select>
+    <input type="text" name="keyword" class="form-control" style="width: 250px;"
+           placeholder="Tìm theo mã đơn hoặc tên khách hàng"
+           value="@ViewBag.Keyword" />
+
+    <button type="submit" class="btn btn-primary">Lọc / Tìm kiếm</button>
+    </form> *@
+    <form asp-action="QLDonHang" method="get" class="filter-form mb-4">
+    <div class="filter-group">
+        <label for="trangThai" class="filter-label">Trạng thái:</label>
+        <select name="trangthai" id="trangThai" class="form-control filter-control">
+            <option value="" >-- Tất cả trạng thái --</option>
+            <option value="Đang xử lý" >Đang xử lý</option>
+            <option value="Đang giao" >Đang giao</option>
+            <option value="Đã thanh toán">Đã thanh toán</option>
+            <option value="Hoàn tiền" >Hoàn tiền</option>
+            <option value="Đã hủy" >Đã hủy</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="keyword" class="filter-label">Tìm kiếm:</label>
+        <input type="text" name="keyword" id="keyword" class="form-control filter-control"
+               placeholder="Mã đơn, khách hàng hoặc sản phẩm"
+               value="@ViewBag.Keyword" />
+    </div>
+
+    <div class="filter-actions">
+        <button type="submit" class="btn btn-primary">Lọc / Tìm kiếm</button>
+        <a asp-action="QLDonHang" class="btn btn-secondary">Làm mới</a>
+    </div>
+</form>
+
+
+
 
     <table class="main-table">
         <thead>
@@ -142,13 +255,11 @@
             {
                 var badgeClass = donhang.MaTrangThai switch
                 {
-                    "Đã thanh toán" => "badge-paid",
-                    "Đang xử lý" => "badge-processing",
-                    "Đang giao" => "badge-shipping",
-                    "Đã giao" => "badge-delivered",
-                    "Đã hủy" => "badge-cancelled",
-                    "Hoàn tiền" => "badge-refunded",
-                    _ => ""
+                    "Đã thanh toán" => "badge bg-success",
+                    "Chờ xử lý" => "badge bg-warning text-dark",
+                    "Đã hủy" => "badge bg-danger",
+                    "Đang giao" => "badge bg-info text-dark",
+                    _ => "badge bg-secondary"
                 };
 
                 <tr>

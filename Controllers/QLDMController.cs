@@ -12,7 +12,7 @@ namespace BanSua4CE.Controllers
 
         public QLDMController(ShopBanSuaContext shopBanSuaContext)
         {
-           _context = shopBanSuaContext;
+            _context = shopBanSuaContext;
         }
 
         public IActionResult Index()
@@ -30,7 +30,7 @@ namespace BanSua4CE.Controllers
         [HttpPost]
         public IActionResult Create(DanhMuc danhmuc)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 var dm = new DanhMucVM
                 {
@@ -151,23 +151,81 @@ namespace BanSua4CE.Controllers
 
 
 
-        public IActionResult QLDonHang(string trangthai)
-        {
-            var danhsachdonhang = _context.DonHangs.Include(x => x.IdKhNavigation).Include(x => x.ChiTietDonHangs)
-                .ThenInclude(ct => ct.IdSpNavigation)
-                  .Where(dh => dh.ChiTietDonHangs != null && dh.ChiTietDonHangs.Any())
-                .OrderByDescending(x => x.NgayTao).ToList();
-            if (!string.IsNullOrEmpty(trangthai))
-            {
-                danhsachdonhang = danhsachdonhang.Where(dh => dh.MaTrangThai == trangthai).ToList();
-            }
-            var kq = danhsachdonhang.OrderByDescending(x => x.NgayTao).ToList();
-            //ViewBag.TrangThai = trangthai;
+        //public IActionResult QLDonHang(string trangthai)
+        //{
+        //    var query = _context.DonHangs
+        //        .Include(x => x.IdKhNavigation)
+        //        .Include(x => x.ChiTietDonHangs)
+        //            .ThenInclude(ct => ct.IdSpNavigation)
+        //        // Lọc chỉ những đơn hàng có sản phẩm hợp lệ
+        //        .Where(dh => dh.ChiTietDonHangs.Any(ct => ct.IdSpNavigation != null && ct.SoLuong > 0))
+        //        .AsQueryable();
 
-            return View(danhsachdonhang);
+        //    // Lọc thêm theo trạng thái nếu có
+        //    if (!string.IsNullOrEmpty(trangthai))
+        //    {
+        //        query = query.Where(dh => dh.MaTrangThai == trangthai);
+        //    }
+
+        //    var donHangs = query.OrderByDescending(x => x.NgayTao).ToList();
+
+        //    return View(donHangs);
+        //}
+        public IActionResult QLDonHang(string trangThai, string keyword)
+        {
+            var query = _context.DonHangs
+                .Include(x => x.IdKhNavigation)
+                .Include(x => x.ChiTietDonHangs)
+                    .ThenInclude(ct => ct.IdSpNavigation)
+                // Lọc chỉ những đơn hàng có sản phẩm hợp lệ
+                .Where(dh => dh.ChiTietDonHangs.Any(ct => ct.IdSpNavigation != null && ct.SoLuong > 0))
+                .AsQueryable();
+
+            // Lọc thêm theo trạng thái nếu có
+            if (!string.IsNullOrEmpty(trangThai))
+            {
+                query = query.Where(dh => dh.MaTrangThai == trangThai);
+            }
+
+            // Lọc theo từ khóa (keyword)
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                var lowerKeyword = keyword.ToLower();
+                query = query.Where(dh =>
+                    dh.IdDonHang.ToString().Contains(lowerKeyword) ||
+                    (dh.IdKhNavigation != null && dh.IdKhNavigation.TenKh.ToLower().Contains(lowerKeyword)) ||
+                    dh.ChiTietDonHangs.Any(ct => ct.IdSpNavigation != null && ct.IdSpNavigation.TenSp.ToLower().Contains(lowerKeyword))
+                );
+            }
+
+            var donHangs = query.OrderByDescending(x => x.NgayTao).ToList();
+
+            ViewBag.TrangThai = trangThai;
+            ViewBag.Keyword = keyword;
+
+            return View(donHangs);
         }
 
 
+        //public async Task<IActionResult> LocDonDatHang(string trangThai)
+        //{
+        //    var query = _context.DonHangs
+        //        .Include(dh => dh.IdKhNavigation)
+        //        .Include(dh => dh.ChiTietDonHangs)
+        //            .ThenInclude(ct => ct.IdSpNavigation)
+        //        .AsQueryable();
+
+        //    if (!string.IsNullOrEmpty(trangThai))
+        //    {
+        //        query = query.Where(dh => dh.MaTrangThai == trangThai);
+        //    }
+
+        //    var donHangs = await query
+        //        .Where(dh => dh.ChiTietDonHangs != null && dh.ChiTietDonHangs.Any())
+        //        .ToListAsync();
+
+        //    return View("QLDonHang", donHangs);
+        //}
 
 
         [HttpPost]
@@ -183,13 +241,13 @@ namespace BanSua4CE.Controllers
                 TempData["ThongBao"] = $"❌ Đơn hàng #{idDonHang} đã thanh toán. Chỉ có thể chuyển sang trạng thái \"Hoàn tiền\".";
                 return RedirectToAction("QLDonHang");
             }
-            if (donHang.MaTrangThai == "Đã hủy" )
+            if (donHang.MaTrangThai == "Đã hủy")
             {
                 TempData["ThongBao"] = $"❌ Đơn hàng #{idDonHang} đã bị hủy và không thể cập nhật trạng thái.";
                 return RedirectToAction("QLDonHang");
             }
 
-        
+
             donHang.MaTrangThai = trangThaiMoi;
             _context.SaveChanges();
             TempData["ThongBao"] = $"✔️ Trạng thái đơn hàng #{idDonHang} đã được cập nhật thành \"{trangThaiMoi}\"";
@@ -198,7 +256,34 @@ namespace BanSua4CE.Controllers
         }
 
 
+        public async Task<IActionResult> LocDonDat(string trangThai, string keyword)
+        {
+            var query = _context.DonHangs
+                .Include(dh => dh.IdKhNavigation)
+                .Include(dh => dh.ChiTietDonHangs)
+                    .ThenInclude(ct => ct.IdSpNavigation)
+                .AsQueryable();
 
+            // Lọc trạng thái
+            if (!string.IsNullOrEmpty(trangThai))
+            {
+                query = query.Where(dh => dh.MaTrangThai.ToLower() == trangThai.ToLower());
+            }
+
+            // Tìm kiếm
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                query = query.Where(dh =>
+                    dh.IdDonHang.ToString().Contains(keyword) ||
+                    dh.IdKhNavigation.TenKh.ToLower().Contains(keyword.ToLower()));
+            }
+
+            ViewBag.TrangThai = trangThai;  // Lưu trạng thái hiện tại
+            ViewBag.Keyword = keyword;      // Lưu từ khóa tìm kiếm
+
+            var donHangs = await query.ToListAsync();
+            return View("QLDonHang", donHangs);
+        }
 
 
     }

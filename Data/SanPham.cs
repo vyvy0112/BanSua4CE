@@ -26,4 +26,6 @@ public partial class SanPham
     public virtual ICollection<DonHang> DonHangs { get; set; } = new List<DonHang>();
 
     public virtual DanhMuc? IdDanhMucNavigation { get; set; }
+
+    public virtual ICollection<MaGiamGium> MaGiamGia { get; set; } = new List<MaGiamGium>();
 }

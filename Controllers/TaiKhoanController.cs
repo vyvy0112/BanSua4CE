@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using System.Linq;
@@ -140,25 +141,18 @@ namespace BanSua4CE.Controllers
 
         public async Task<IActionResult> LichSuDonHang()
         {
-            var idkh = int.Parse(HttpContext.User.Claims.SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
+            var idkh = int.Parse(HttpContext.User.Claims
+                .SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
 
-            // Lấy thông tin khách hàng từ username (tùy theo model)
-            if (idkh == null)
-            {
-                // Nếu không tìm thấy khách, redirect hoặc trả lỗi
-                return RedirectToAction("DangNhap", "TaiKhoan");
-            }
-
-            // Lấy danh sách đơn hàng của khách
-            var danhsachdonhang = _context.DonHangs
-                .Include(dh => dh.ChiTietDonHangs )
+            // Lấy danh sách đơn hàng kèm chi tiết
+            var danhsachdonhang = await _context.DonHangs
+                .Include(dh => dh.ChiTietDonHangs)
                     .ThenInclude(ct => ct.IdSpNavigation)
-                .Where(dh => dh.IdKh == idkh && dh.ChiTietDonHangs.Any())
+                .Where(dh => dh.IdKh == idkh)
                 .OrderByDescending(dh => dh.NgayTao)
-                .ToList();
+                .ToListAsync();
 
             return View(danhsachdonhang);
-
         }
 
         [HttpPost]
@@ -171,35 +165,77 @@ namespace BanSua4CE.Controllers
                 return RedirectToAction("LichSuDonHang");
             }
 
-            var idkh = int.Parse(HttpContext.User.Claims.SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
+            var idkh = int.Parse(HttpContext.User.Claims
+                .SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
             if (donhang.IdKh != idkh)
             {
-                return Forbid(); // Không có quyền
+                return Forbid();
             }
-            // Kiểm tra trạng thái hiện tại
-            if (donhang.MaTrangThai == "Đã hủy")
-            {
-                // Không thông báo lại nếu đã hủy rồi
-                return RedirectToAction("LichSuDonHang");
-            }
+
+            if (donhang.MaTrangThai == "Đã hủy") return RedirectToAction("LichSuDonHang");
+
             if (donhang.MaTrangThai == "Đã thanh toán")
             {
                 TempData["Error"] = "Đơn hàng đã thanh toán không thể hủy.";
                 return RedirectToAction("LichSuDonHang");
             }
 
-            if (donhang.MaTrangThai != "Đã Thanh Toán" && donhang.MaTrangThai != "Đã Hủy" && donhang.MaTrangThai != "Đã Hủy" )
-            {
-                donhang.MaTrangThai = "Đã Hủy";
-                _context.Update(donhang);
-                await _context.SaveChangesAsync();
-            }
-            else if (donhang.MaTrangThai == "Đang giao")
+            if (donhang.MaTrangThai == "Đang giao")
             {
                 TempData["Error"] = "Đơn hàng đang giao không thể hủy.";
+                return RedirectToAction("LichSuDonHang");
             }
-            return RedirectToAction("LichSuDonHang"); // Quay lại trang lịch sử đơn hàng
+
+            // Hủy đơn
+            donhang.MaTrangThai = "Đã hủy";
+            _context.Update(donhang);
+            await _context.SaveChangesAsync();
+
+            // Gửi thông báo real-time cho admin
+         
+
+            return RedirectToAction("LichSuDonHang");
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> HuyDonHang(int id)
+        //{
+        //    var donhang = await _context.DonHangs.FindAsync(id);
+        //    if (donhang == null)
+        //    {
+        //        TempData["Error"] = "Không tìm thấy đơn hàng.";
+        //        return RedirectToAction("LichSuDonHang");
+        //    }
+
+        //    var idkh = int.Parse(HttpContext.User.Claims.SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
+        //    if (donhang.IdKh != idkh)
+        //    {
+        //        return Forbid(); // Không có quyền
+        //    }
+        //    // Kiểm tra trạng thái hiện tại
+        //    if (donhang.MaTrangThai == "Đã hủy")
+        //    {
+        //        // Không thông báo lại nếu đã hủy rồi
+        //        return RedirectToAction("LichSuDonHang");
+        //    }
+        //    if (donhang.MaTrangThai == "Đã thanh toán")
+        //    {
+        //        TempData["Error"] = "Đơn hàng đã thanh toán không thể hủy.";
+        //        return RedirectToAction("LichSuDonHang");
+        //    }
+
+        //    if (donhang.MaTrangThai != "Đã Thanh Toán" && donhang.MaTrangThai != "Đã Hủy" && donhang.MaTrangThai != "Đã Hủy" )
+        //    {
+        //        donhang.MaTrangThai = "Đã hủy";
+        //        _context.Update(donhang);
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    else if (donhang.MaTrangThai == "Đang giao")
+        //    {
+        //        TempData["Error"] = "Đơn hàng đang giao không thể hủy.";
+        //    }
+        //    return RedirectToAction("LichSuDonHang"); // Quay lại trang lịch sử đơn hàng
+        //}
 
 
     }

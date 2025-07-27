@@ -59,7 +59,31 @@ namespace BanSua4CE.Controllers
             return View();
         }
 
+        public IActionResult ChinhSachBaoHanh()
+        {
+            return View();
+        }
 
+        public IActionResult ChinhSachBaoMat()
+        {
+            return View();
+        }
+
+        public IActionResult QuyDinhDoiTra()
+        {
+            return View();
+        }
+
+
+        public IActionResult PhuongThucThanhToan()
+        {
+            return View();
+
+        }
+        public IActionResult PhuongThucGiaoHang()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

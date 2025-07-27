@@ -1,335 +1,217 @@
-﻿
+﻿@*  @model IEnumerable<BanSua4CE.ViewModels.GioHangVM>
+ @{
+     ViewData["Title"] = "Thanh Toán";
+     double tongTien = Model.Sum(x => x.ThanhTien);
+     double giamGia = !string.IsNullOrEmpty(Context.Session.GetString("GIAMGIA"))
+                      ? Convert.ToDouble(Context.Session.GetString("GIAMGIA"))
+                      : 0;
+     double tongTienSauGiam = !string.IsNullOrEmpty(Context.Session.GetString("TONGTIEN_SAUGIAM"))
+                              ? Convert.ToDouble(Context.Session.GetString("TONGTIEN_SAUGIAM"))
+                              : tongTien;
+ }
+
+ <div class="container pt-5">
+     <div class="row">
+         <div class="col-lg-8">
+             <h4 class="mb-4">Thông Tin Thanh Toán</h4>
+             <form asp-action="ThanhToan" method="post">
+                 <div class="form-group">
+                     <label for="TenKH">Họ Tên</label>
+                     <input type="text" name="TenKH" class="form-control" required />
+                 </div>
+                 <div class="form-group">
+                     <label for="SoDienThoai">Số Điện Thoại</label>
+                     <input type="text" name="SoDienThoai" class="form-control" required />
+                 </div>
+                 <div class="form-group">
+                     <label for="DiaChi">Địa Chỉ</label>
+                     <input type="text" name="DiaChi" class="form-control" required />
+                 </div>
+                 <div class="form-group">
+                     <label for="GhiChu">Ghi Chú</label>
+                     <textarea name="GhiChu" class="form-control"></textarea>
+                 </div>
+                 <div class="form-group">
+                     <label>Phương Thức Thanh Toán</label><br />
+                     <input type="radio" name="payment" value="COD" checked /> COD
+                     <input type="radio" name="payment" value="Thanh toán VNPay" /> VNPay
+                 </div>
+                 <button type="submit" class="btn btn-success">Đặt Hàng</button>
+             </form>
+         </div>
+
+         <div class="col-lg-4">
+             <h4 class="mb-4">Tóm Tắt Đơn Hàng</h4>
+             <div class="border p-3">
+                 <div class="d-flex justify-content-between">
+                     <span>Thành Tiền:</span>
+                     <span>@tongTien.ToString("#,##") VNĐ</span>
+                 </div>
+                 @if (giamGia > 0)
+                 {
+                     <div class="d-flex justify-content-between text-success">
+                         <span>Giảm Giá:</span>
+                         <span>@giamGia.ToString("#,##") VNĐ</span>
+                     </div>
+                 }
+                 <hr />
+                 <div class="d-flex justify-content-between">
+                     <strong>Tổng Cộng:</strong>
+                     <strong>@tongTienSauGiam.ToString("#,##") VNĐ</strong>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ *@
+
 @{
     ViewData["Title"] = "ThanhToan";
 }
+@model IEnumerable<BanSua4CE.ViewModels.GioHangVM>
 
-  @model IEnumerable<BanSua4CE.ViewModels.GioHangVM>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>Thanh Toán - EShopper</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="~/HETHONGVACONGNGHEWEB/lienket/css/stylecart.css" rel="stylesheet" />
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="~/HETHONGVACONGNGHEWEB/lienket/css/style.css" rel="stylesheet" />
 </head>
-
 <body>
 
-
-    <!-- Cart Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
+            <!-- Cột thông tin giao hàng -->
             <div class="col-lg-6 mb-3">
-                <div class="card">
+                <div class="card border-secondary mb-3">
                     <div class="card-header bg-secondary text-dark">
-                        <h5 class="m-0">Địa chỉ giao hàng</h3>
+                        <h5 class="m-0">Địa chỉ giao hàng</h5>
                     </div>
                     <div class="card-body">
+                        <form asp-controller="GioHang" asp-action="ThanhToan" method="post">
+                            <div class="form-group delivery-info">
+                                <label for="email">Email*</label>
+                                <input type="email" class="form-control" id="email" name="Email" placeholder="Nhập email">
+                            </div>
+                            <div class="form-group delivery-info">
+                                <label for="fullname">Họ và tên*</label>
+                                <input type="text" class="form-control" id="fullname" name="TenKh" placeholder="Nhập họ và tên">
+                            </div>
+                            <div class="form-group delivery-info">
+                                <label for="phone">Số điện thoại*</label>
+                                <input type="text" class="form-control" id="phone" name="SoDienThoai" placeholder="Nhập số điện thoại">
+                            </div>
+                            <div class="form-item delivery-info">
+                                <label class="form-label my-3">Địa chỉ nhận hàng<sup>*</sup></label>
+                                <input type="text" name="DiaChi" class="form-control" placeholder="256 Nguyễn Văn Cừ, An Hòa, Cần Thơ">
+                            </div>
+                            <div class="form-group">
+                                <label for="note">Ghi Chú</label>
+                                <textarea name="GhiChu" class="form-control" spellcheck="false" cols="30" rows="5" placeholder="Ghi Chú"></textarea>
+                            </div>
 
-                       
- 
-                          <form asp-controller="GioHang" asp-action="ThanhToan" method="post">
-                           
-
-                             <div class="form-group delivery-info delivery-info">
-                                 <label for="email">Email*</label>
-                                 <input type="email" class="form-control" id="email" name="Email" placeholder="Nhập email">
-                             </div>
-                             <div class="form-group delivery-info">
-                                 <label for="fullname">Họ và tên*</label>
-                                 <input type="text" class="form-control" id="fullname" name="TenKh" placeholder="Nhập họ và tên">
-                             </div>
-                             <div class="form-group delivery-info">
-                                 <label for="phone">Số điện thoại*</label>
-                                 <input type="text" class="form-control" id="phone" name="SoDienThoai" placeholder="Nhập số điện thoại">
-                             </div>
-
-                             <div class="form-item delivery-info">
-                                 <label class="form-label my-3">Địa chỉ nhận hàng<sup>*</sup></label>
-                                 <input type="text" name="DiaChi" class="form-control" placeholder=" 256 Nguyễn Văn Cừ, An Hòa, Cần Thơ">
-                             </div>
-                             <div class="form-group">
-                                 <label for="note">Ghi Chú</label>
-                                 <textarea name="GhiChu" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Ghi Chú">
-                                 </textarea>
-                             </div>
-
-
-                             <form asp-action="ThanhToan" method="post">
- 
-                                 <input type="submit" name="payment" value="COD" class="btn btn-primary" />
-                                 <input type="submit" name="payment" value="Thanh toán VNPay" class="btn btn-primary" />
-                              </form>
-
-                            
-                         </form> 
-
-
-                        </div>
+                            <div class="mt-3">
+                                <input type="submit" name="payment" value="COD" class="btn btn-primary text-white" />
+                                <input type="submit" name="payment" value="Thanh toán VNPay" class="btn btn-primary text-white" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            
-             <div class="col-lg-6">
+
+            <!-- Cột giỏ hàng -->
+            <div class="col-lg-6">
                 <div class="card border-secondary mb-3">
-                    
                     <div class="card-header bg-secondary text-dark">
-                        <h5 class="m-0">Giỏ hàng</th>
+                        <h5 class="m-0">Giỏ hàng</h5>
                     </div>
-                    <table class="table table-bordered text-center mb-0">
-                        <thead class="bg-secondary text-dark">
-                            <tr>
-                                <th>Sản Phẩm</th>
-                                <th>Giá</th>
-                                <th>Số Lượng</th>
-                                <th>Tổng Cộng</th>
-                                <th>Xóa</th>
-                            </tr>
-                        </thead>
-                        <tbody class="align-middle">
-
-                            @foreach(var item in Model)
-                            {
+                    <div class="card-body p-0">
+                        <table class="table table-bordered text-center mb-0">
+                            <thead class="bg-secondary text-dark">
                                 <tr>
-                                    <td class="align-middle">
-                                        <img src="~/hinhanh/@item.HinhAnh" alt="@item.TenSp" style="width: 50px;"> @item.TenSp
-                                    </td>
-                                    <td class="align-middle">@item.DonGia.ToString("#,##") VNĐ</td>
-                                    <td class="align-middle">
-                                        <div class="input-group quantity mx-auto" style="width: 100px;">
-                                            <div class="input-group-btn">
-                                                <a asp-controller="GioHang" asp-action="GiamSoLuong" asp-route-id="@item.IdSp">
-                                                    <button class="btn btn-sm btn-primary btn-minus">
-                                                        <i class="fa fa-minus"></i>
-                                                    </button>
-                                                </a>
-                                            </div>
-                                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="@item.SoLuong">
-                                            <div class="input-group-btn">
-                                                <a asp-action="TangSoLuong" asp-controller="GioHang" asp-route-id="@item.IdSp">
-                                                    <button class="btn btn-sm btn-primary btn-plus">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="align-middle">@item.ThanhTien.ToString("#,##") VNĐ</td>
-                                    <td class="align-middle">
-                                        <form method="post" action="@Url.Action("XoaGioHang", "GioHang")">
-                                            <input type="hidden" name="id" value="@item.IdSp" />
-                                            <button type="submit" class="btn btn-sm btn-danger">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </form>
-                                    </td>
+                                    <th>Sản Phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số Lượng</th>
+                                    <th>Tổng Cộng</th>
+                                    <th>Xóa</th>
                                 </tr>
-                            }
-                           
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody class="align-middle">
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="align-middle">
+                                            <img src="~/hinhanh/@item.HinhAnh" alt="@item.TenSp" style="width: 50px;"> @item.TenSp
+                                        </td>
+                                        <td class="align-middle">@item.DonGia.ToString("#,##") VNĐ</td>
+                                        <td class="align-middle">
+                                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                                <div class="input-group-btn">
+                                                    <a asp-controller="GioHang" asp-action="GiamSoLuong" asp-route-id="@item.IdSp" class="btn btn-sm btn-primary text-white">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="@item.SoLuong">
+                                                <div class="input-group-btn">
+                                                    <a asp-action="TangSoLuong" asp-controller="GioHang" asp-route-id="@item.IdSp" class="btn btn-sm btn-primary text-white">
+                                                        <i class="fa fa-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle">@item.ThanhTien.ToString("#,##") VNĐ</td>
+                                        <td class="align-middle">
+                                            <form method="post" action="@Url.Action("XoaGioHang", "GioHang")">
+                                                <input type="hidden" name="id" value="@item.IdSp" />
+                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
+                    @{
+                        double giamGia = Convert.ToDouble(ViewBag.GiamGia ?? 0);
+                        double tongTienSauGiam = Convert.ToDouble(ViewBag.TongTienSauGiam ?? Model.Sum(x => x.ThanhTien));
+                    }
 
-                <div class="card border-secondary mb-3">
-                    
                     <div class="card-header bg-secondary border-0">
                         <h4 class="font-weight-semi-bold m-0">Thông tin đơn hàng</h4>
                     </div>
-                   
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Thanh Toán</h5>
-                            <h5 class="font-weight-bold">@Model.Sum(x=>x.ThanhTien).ToString("#,##") VNĐ</h5>
+                            <h5 class="font-weight-bold">Tạm Tính</h5>
+                            <h5 class="font-weight-bold">@Model.Sum(x => x.ThanhTien).ToString("#,##") VNĐ</h5>
+                        </div>
+                        @if (giamGia > 0)
+                        {
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="font-weight-medium text-success">Giảm Giá</h5>
+                                <h5 class="font-weight-medium text-success">-@giamGia.ToString("#,##") VNĐ</h5>
+                            </div>
+                        }
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5 class="font-weight-bold">Tổng Cộng</h5>
+                            <h5 class="font-weight-bold">@tongTienSauGiam.ToString("#,##") VNĐ</h5>
                         </div>
                     </div>
                 </div>
-                
-
-               
-            </div> 
-       
-           </div>
+            </div>
+        </div>
     </div>
-
 
     @section Scripts {
         @{
             await Html.RenderPartialAsync("_ValidationScriptsPartial");
         }
     }
-    <!-- Cart End -->
 
-
-    <!-- Footer Start -->
-    
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#GiongKhachHang").change(function () {
-                if ($(this).is(":checked")) {
-                    $(".delivery-info").hide();
-                } else {
-                    $(".delivery-info").show();
-                }
-            });
-        });
-        (function ($) {
-            "use strict";
-
-            // Dropdown on mouse hover
-            $(document).ready(function () {
-                function toggleNavbarMethod() {
-                    if ($(window).width() > 992) {
-                        $('.navbar .dropdown').on('mouseover', function () {
-                            $('.dropdown-toggle', this).trigger('click');
-                        }).on('mouseout', function () {
-                            $('.dropdown-toggle', this).trigger('click').blur();
-                        });
-                    } else {
-                        $('.navbar .dropdown').off('mouseover').off('mouseout');
-                    }
-                }
-                toggleNavbarMethod();
-                $(window).resize(toggleNavbarMethod);
-            });
-
-
-            // Back to top button
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    $('.back-to-top').fadeIn('slow');
-                } else {
-                    $('.back-to-top').fadeOut('slow');
-                }
-            });
-            $('.back-to-top').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-                return false;
-            });
-
-
-            // Vendor carousel
-            $('.vendor-carousel').owlCarousel({
-                loop: true,
-                margin: 29,
-                nav: false,
-                autoplay: true,
-                smartSpeed: 1000,
-                responsive: {
-                    0: {
-                        items: 2
-                    },
-                    576: {
-                        items: 3
-                    },
-                    768: {
-                        items: 4
-                    },
-                    992: {
-                        items: 5
-                    },
-                    1200: {
-                        items: 6
-                    }
-                }
-            });
-
-
-            // Related carousel
-            $('.related-carousel').owlCarousel({
-                loop: true,
-                margin: 29,
-                nav: false,
-                autoplay: true,
-                smartSpeed: 1000,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    576: {
-                        items: 2
-                    },
-                    768: {
-                        items: 3
-                    },
-                    992: {
-                        items: 4
-                    }
-                }
-            });
-
-
-            // Product Quantity
-            $('.quantity button').on('click', function () {
-                var button = $(this);
-                var oldValue = button.parent().parent().find('input').val();
-                if (button.hasClass('btn-plus')) {
-                    var newVal = parseFloat(oldValue) + 1;
-                } else {
-                    if (oldValue > 0) {
-                        var newVal = parseFloat(oldValue) - 1;
-                    } else {
-                        newVal = 0;
-                    }
-                }
-                button.parent().parent().find('input').val(newVal);
-            });
-
-        })(jQuery);
-
-        $(document).ready(function () {
-            $("#GiongKhachHang").change( function () {
-               if($(this).prop("checked")){
-                    $(this).val(true);
-                    $(".delivery-info").addClass("d-none");
-                }else{
-                    $(this).val(false);
-                    $(".delivery-info").removeClass("d-none");
-                  
-                }
-            });
-        });
-
-
-    </script>
 </body>
-
 </html>

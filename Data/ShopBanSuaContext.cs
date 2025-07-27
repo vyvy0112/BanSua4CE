@@ -25,6 +25,8 @@ public partial class ShopBanSuaContext : DbContext
 
     public virtual DbSet<LienHe> LienHes { get; set; }
 
+    public virtual DbSet<MaGiamGium> MaGiamGia { get; set; }
+
     public virtual DbSet<SanPham> SanPhams { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -32,6 +34,7 @@ public partial class ShopBanSuaContext : DbContext
     public virtual DbSet<VnPay> VnPays { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=LAPTOP-EUOBO6JQ;Initial Catalog=ShopBanSua;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -117,6 +120,24 @@ public partial class ShopBanSuaContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.HoTen).HasMaxLength(100);
+        });
+
+        modelBuilder.Entity<MaGiamGium>(entity =>
+        {
+            entity.HasKey(e => e.IdMaGiamGia).HasName("PK__MaGiamGi__0533C2D4572EAA43");
+
+            entity.HasIndex(e => e.MaCode, "UQ__MaGiamGi__152C7C5CDC10A324").IsUnique();
+
+            entity.Property(e => e.IdSp).HasColumnName("IdSP");
+            entity.Property(e => e.MaCode).HasMaxLength(50);
+            entity.Property(e => e.MoTa).HasMaxLength(255);
+            entity.Property(e => e.NgayBatDau).HasColumnType("datetime");
+            entity.Property(e => e.NgayKetThuc).HasColumnType("datetime");
+            entity.Property(e => e.PhanTramGiam).HasColumnType("decimal(5, 2)");
+
+            entity.HasOne(d => d.IdSpNavigation).WithMany(p => p.MaGiamGia)
+                .HasForeignKey(d => d.IdSp)
+                .HasConstraintName("FK__MaGiamGia__IdSP__7CD98669");
         });
 
         modelBuilder.Entity<SanPham>(entity =>
