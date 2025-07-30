@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BanSua4CE.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BanSua4CE.bundle.scp.css"
-    },
-    {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\HETHONGVACONGNGHEWEB\\PNG\\co.png",
       "PackagePath": "staticwebassets\\HETHONGVACONGNGHEWEB\\PNG\\co.png"
     },
@@ -191,6 +187,46 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\-sua-bot-nutricare-colos-24h-grow-plus-1-850g-cho-be-1-2y-1.jpg",
       "PackagePath": "staticwebassets\\hinhanh\\-sua-bot-nutricare-colos-24h-grow-plus-1-850g-cho-be-1-2y-1.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\1087929.png",
+      "PackagePath": "staticwebassets\\hinhanh\\1087929.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\1828843.png",
+      "PackagePath": "staticwebassets\\hinhanh\\1828843.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\190411.png",
+      "PackagePath": "staticwebassets\\hinhanh\\190411.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\25114_Flexible_mom_feeding_baby_1.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\25114_Flexible_mom_feeding_baby_1.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\3059442.png",
+      "PackagePath": "staticwebassets\\hinhanh\\3059442.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\3064197.png",
+      "PackagePath": "staticwebassets\\hinhanh\\3064197.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\891448.png",
+      "PackagePath": "staticwebassets\\hinhanh\\891448.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\891462.png",
+      "PackagePath": "staticwebassets\\hinhanh\\891462.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\anh-me-va-be-hanh-phuc_094351740.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\anh-me-va-be-hanh-phuc_094351740.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\be-ngu.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\be-ngu.jpg"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\c01.jpg",

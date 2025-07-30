@@ -8,7 +8,10 @@ namespace BanSua4CE.ViewModels
         [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng nhập Mật khẩu")]
+
+
+
+        [Required(ErrorMessage = "Vui lòng nhập Mật khẩu")]      
         [DataType(DataType.Password)]
         public string MatKhau { get; set; }
     }

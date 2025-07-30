@@ -21,12 +21,15 @@ namespace BanSua4CE.ViewModels
 
 
         [Required(ErrorMessage = "Vui lòng nhập Mật khẩu")]
+        [MinLength(6, ErrorMessage = "Mật khẩu phải có ít nhất 6 ký tự")]
         public string MatKhau { get; set; } = null!;
 
-
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
         [Display(Name = "Địa Chỉ")]
         public string? DiaChi { get; set; }
 
+
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
         [Display(Name = "Số Điện Thoại")]
         public string? SoDienThoai { get; set; }
 

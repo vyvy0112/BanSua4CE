@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BanSua4CE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e600e60d660487cbdd655dc05e28eefe8b649ce6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03bdf7a74df47ec33f0f442287cfa23e23438201")]
 [assembly: System.Reflection.AssemblyProductAttribute("BanSua4CE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BanSua4CE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -66,8 +66,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaW9pVGhpZXUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/GioiThieuVeTiemSua.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaW9pVGhpZXVWZVRpZW1TdWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/KienThucNuoiCon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxLaWVuVGh1Y051b2lDb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/PhuongThucGiaoHang.cshtml]
@@ -84,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/QuyDinhDoiTra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdXlEaW5oRG9pVHJhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Home/QuyDinhDoiTraHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdXlEaW5oRG9pVHJhSGFuZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Product/ChiTietSanPham.cshtml]
@@ -178,6 +190,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -205,7 +221,3 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[D:/NĂM 3/CONG_NGHE_WEB/BanSua4CE/BanSua4CE/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-fstwx83yly

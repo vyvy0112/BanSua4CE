@@ -4,14 +4,11 @@
 }
 
 
-
-
-
 <div class="footer-banner">
     <div class="banner-content">
         <img src="https://cdn.tgdd.vn/Files/2020/08/03/1276201/huong-dan-cac-buoc-chi-tiet-cho-be-bu-binh-cac-me--8.jpg" alt="Tải App KidsPlaza" class="banner-image">
         <div class="banner-text">
-            <h2>HÃY ĐẾN TIỆM SỮA 4CE MUA SẮM NGAY !</h2>
+            <h2 style="color:white !important">HÃY ĐẾN TIỆM SỮA 4CE MUA SẮM NGAY !</h2>
             <p>Nhận quà bao la, mua sắm tiện lợi hơn!</p>
             <a asp-controller="Product" asp-action="Index" class="banner-button">Mua ngay</a>
         </div>
@@ -36,10 +33,11 @@
             <div class="footer-col">
                 <h4>VỀ TIỆM SỮA 4CE</h4>
                 <ul>
-                    <li><a href="/pages/gioithieu.html">Giới thiệu Tiệm sữa 4CE </a></li>
-                    <li><a href="/sanpham/product.html">Danh sách các sản phẩm</a></li>
-                    <li><a href="https://eva.vn/kien-thuc-nuoi-con-p2885c10.html">Kiến thức nuôi con</a></li>
+                    <li><a asp-controller="Home" asp-action="GioiThieuVeTiemSua">Giới thiệu Tiệm sữa 4CE </a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Danh sách các sản phẩm</a></li>
+                    <li><a asp-controller="Home" asp-action="KienThucNuoiCon">Kiến thức nuôi con</a></li>
                     <li><a asp-controller="Home" asp-action="ChinhSachBaoMat">Chính sách bảo mật</a></li>
+               
                 </ul>
             </div>
 
@@ -47,9 +45,11 @@
             <div class="footer-col">
                 <h4>HỖ TRỢ KHÁCH HÀNG</h4>
                 <ul>
-                    <li><a href="#">Phương thức thanh toán</a></li>
-                    <li><a href="#">Phương thức giao hàng</a></li>
+                    <li><a asp-controller="Home" asp-action="QuyDinhDoiTraHang">Quy định đổi trả hàng</a></li>
+                    <li><a asp-controller="Home" asp-action="PhuongThucThanhToan">Phương thức thanh toán</a></li>
+                    <li><a asp-controller="Home" asp-action="PhuongThucGiaoHang">Phương thức giao hàng</a></li>
                     <li><a asp-controller="Home" asp-action="Contact">Gửi góp ý / Khiếu nại</a></li>
+                    <li><a asp-controller="Home" asp-action="ChinhSachBaoHanh">Chính sách bảo hành</a></li>
 
                 </ul>
             </div>

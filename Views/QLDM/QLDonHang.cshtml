@@ -181,7 +181,7 @@
 </style>
 
 <div class="table-wrapper">
-    <h2>📦 Quản lý đơn hàng</h2>
+    <h2 style="color: hwb(230 6% 33%) !important;text-align: center;font-size:30px "> Quản lý đơn hàng</h2>
 
     @if (TempData["ThongBao"] != null)
     {
@@ -193,22 +193,7 @@
 
 
    
-    @* <form asp-action="QLDonHang" method="get" class="mb-3 d-flex" style="gap: 10px;">
-    <select name="trangThai" class="form-control" style="width: 200px;">
-        <option value="" >-- Tất cả trạng thái --</option>
-        <option value="Chờ xác nhận" >Chờ xác nhận</option>
-        <option value="Đang xử lý" >Đang xử lý</option>
-        <option value="Đang giao" >Đang giao</option>
-        <option value="Đã thanh toán" >Đã thanh toán</option>
-        <option value="Hoàn tiền" >Hoàn tiền</option>
-        <option value="Đã hủy">Đã hủy</option>
-    </select>
-    <input type="text" name="keyword" class="form-control" style="width: 250px;"
-           placeholder="Tìm theo mã đơn hoặc tên khách hàng"
-           value="@ViewBag.Keyword" />
-
-    <button type="submit" class="btn btn-primary">Lọc / Tìm kiếm</button>
-    </form> *@
+   
     <form asp-action="QLDonHang" method="get" class="filter-form mb-4">
     <div class="filter-group">
         <label for="trangThai" class="filter-label">Trạng thái:</label>
@@ -230,8 +215,8 @@
     </div>
 
     <div class="filter-actions">
-        <button type="submit" class="btn btn-primary">Lọc / Tìm kiếm</button>
-        <a asp-action="QLDonHang" class="btn btn-secondary">Làm mới</a>
+        <button type="submit" class="btn btn-danger">Lọc / Tìm kiếm</button>
+            <a asp-action="QLDonHang" class="btn" style="background-color: hwb(230 6% 33%) !important; color:white">Làm mới</a>
     </div>
 </form>
 
@@ -316,7 +301,7 @@
                                 <option value="Đã hủy" selected="@("Đã hủy" == donhang.MaTrangThai)">Đã hủy</option>
                                 <option value="Hoàn tiền" selected="@("Hoàn tiền" == donhang.MaTrangThai)">Hoàn tiền</option>
                             </select>
-                            <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Cập nhật</button>
                         </form>
                     </td>
                 </tr>

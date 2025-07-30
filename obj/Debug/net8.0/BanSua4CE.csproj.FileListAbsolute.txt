@@ -278,9 +278,7 @@ D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\staticwebassets\msb
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BanSua4CE.props
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BanSua4CE.props
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\staticwebassets.pack.json
-D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\scopedcss\bundle\BanSua4CE.styles.css
-D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\scopedcss\projectbundle\BanSua4CE.bundle.scp.css
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\BanSua4CE.csproj.Up2Date
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\BanSua4CE.dll
 D:\NĂM 3\CONG_NGHE_WEB\BanSua4CE\BanSua4CE\obj\Debug\net8.0\refint\BanSua4CE.dll

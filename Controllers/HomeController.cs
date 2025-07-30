@@ -89,5 +89,28 @@ namespace BanSua4CE.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
+
+        public IActionResult GioiThieuVeTiemSua()
+        {
+            return View();
+        }
+
+        public IActionResult KienThucNuoiCon()
+        {
+            return View();
+        }
+        public IActionResult QuyDinhDoiTraHang()
+        {
+            return View();
+        }
+
+        
+
+
+
+
     }
 }
