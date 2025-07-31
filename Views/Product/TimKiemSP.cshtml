@@ -25,43 +25,46 @@
 <script src="~/HETHONGVACONGNGHEWEB/lienket/js/script.js"></script>
 
 <body>
-<h1 style="color: #3909a9 !important">Tìm Kiếm Sản Phẩm</h1>
+    <h1 style="color: #3909a9 !important; text-align: center; font-size: 36px;">
+        Tìm Kiếm Sản Phẩm
+    </h1>
 
 
  <div class="tab-content" id="productList">
     <div class="tab-pane fade show active" id="powder-milk" role="tabpanel" aria-labelledby="powder-milk-tab">
         <div class="d-flex flex-wrap">
-            @if (Model != null)
-            {
-                @foreach (var item in Model)
+                @if (Model != null && Model.Any())
                 {
+                    @foreach (var item in Model)
+                    {
                         <div class="product-card">
                             <a asp-controller="Product" asp-action="ChiTietSanPham" asp-route-id="@item.IdSp">
                                 <img src="~/hinhanh/@item.HinhAnh" alt="@item.TenSp">
                             </a>
-                        <h5>@item.TenSp </h5>
+                            <h5>@item.TenSp </h5>
 
                             <p style="color:red !important">Giá: @item.DonGia.ToString("#,##") VNĐ</p>
 
-                            <p color="black">Xuất Xứ: @item.XuatXu</p>
+                            <p style="color: black;">Xuất Xứ: @item.XuatXu</p>
                             <div class="cart-container">
                                 <button class="btn btn-primary cart-btn" onclick="addToCart(@item.IdSp)">
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
                             </div>
                         </div>
-                }
-            }
-            else
-            {
-                <div class="text-center w-100 mt-4">
-                    <h5 style="color: #3909a9 !important">Không tìm thấy sản phẩm nào</h5>
-                    @if (!string.IsNullOrEmpty(ViewBag.TuKhoa as string))
-                    {
-                        <p>Từ khóa: <strong>@ViewBag.TuKhoa</strong></p>
                     }
-                </div>
-            }
+                }
+                else
+                {
+                    <div class="text-center w-100 mt-4">
+                        <h5 style="color: #3909a9 !important;font-size: 36px;">Không tìm thấy sản phẩm nào</h5>
+                        @if (!string.IsNullOrEmpty(ViewBag.TuKhoa as string))
+                        {
+                            <p>Từ khóa: <strong>@ViewBag.TuKhoa</strong></p>
+                        }
+                    </div>
+                }
+
         </div>
     </div>
 </div>

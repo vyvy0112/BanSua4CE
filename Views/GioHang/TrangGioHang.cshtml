@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<BanSua4CE.ViewModels.GioHangVM>
+
+
 @{
     double tongTien = Model.Sum(x => x.ThanhTien);
     double giamGia = !string.IsNullOrEmpty(Context.Session.GetString("GIAMGIA"))
@@ -125,6 +127,10 @@
                 </div>
             </div>
         </div>
+
+
+      
+
     </div>
 </div>
 

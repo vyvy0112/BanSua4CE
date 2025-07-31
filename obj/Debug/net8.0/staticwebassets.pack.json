@@ -225,6 +225,22 @@
       "PackagePath": "staticwebassets\\hinhanh\\anh-me-va-be-hanh-phuc_094351740.jpg"
     },
     {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\banner1.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\banner1.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\banner2.png",
+      "PackagePath": "staticwebassets\\hinhanh\\banner2.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\banner3.png",
+      "PackagePath": "staticwebassets\\hinhanh\\banner3.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\banner4.png",
+      "PackagePath": "staticwebassets\\hinhanh\\banner4.png"
+    },
+    {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\be-ngu.jpg",
       "PackagePath": "staticwebassets\\hinhanh\\be-ngu.jpg"
     },
@@ -247,6 +263,10 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\frame-hoa-toc-1h-02.jpg",
       "PackagePath": "staticwebassets\\hinhanh\\frame-hoa-toc-1h-02.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\friso-logo.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\friso-logo.jpg"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\friso1_900g.jpg",
@@ -299,6 +319,50 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logcod.png",
       "PackagePath": "staticwebassets\\hinhanh\\logcod.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logoabbout.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\logoabbout.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logoaptamil.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\logoaptamil.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logoenfa.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\logoenfa.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logohealthy.png",
+      "PackagePath": "staticwebassets\\hinhanh\\logohealthy.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logohipp.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\logohipp.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logomeiji.png",
+      "PackagePath": "staticwebassets\\hinhanh\\logomeiji.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logonestle.png",
+      "PackagePath": "staticwebassets\\hinhanh\\logonestle.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logonutifood.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\logonutifood.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logonutricare.png",
+      "PackagePath": "staticwebassets\\hinhanh\\logonutricare.png"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logoth.webp",
+      "PackagePath": "staticwebassets\\hinhanh\\logoth.webp"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logovinamilk.png",
+      "PackagePath": "staticwebassets\\hinhanh\\logovinamilk.png"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\logovnpay.png",
@@ -539,6 +603,10 @@
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\sua-vinamilk-optimum-gold-4-850g-cho-be-2-6-tuoi-1.jpg",
       "PackagePath": "staticwebassets\\hinhanh\\sua-vinamilk-optimum-gold-4-850g-cho-be-2-6-tuoi-1.jpg"
+    },
+    {
+      "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\thuc-on-an-dam-cho-be-5-thang.jpg",
+      "PackagePath": "staticwebassets\\hinhanh\\thuc-on-an-dam-cho-be-5-thang.jpg"
     },
     {
       "Id": "D:\\NĂM 3\\CONG_NGHE_WEB\\BanSua4CE\\BanSua4CE\\wwwroot\\hinhanh\\vienuongkid.jpg",

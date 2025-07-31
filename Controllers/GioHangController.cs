@@ -28,7 +28,6 @@ namespace BanSua4CE.Controllers
 
 
 
-
         [HttpPost]
         public IActionResult ThemGioHang(int id, int soluong = 1)
         {
@@ -118,16 +117,7 @@ namespace BanSua4CE.Controllers
 
         }
 
-        //[Authorize]
-        //[HttpGet]
-        //public IActionResult ThanhToan()
-        //{
-        //    if (Cart.Count == 0)
-        //    {
-        //        return RedirectToAction("/");
-        //    }
-        //    return View(Cart);
-        //}
+        
         [Authorize]
         [HttpGet]
         public IActionResult ThanhToan()
@@ -149,114 +139,6 @@ namespace BanSua4CE.Controllers
 
 
 
-        //[Authorize]
-        //[HttpPost]
-        //public IActionResult ThanhToan(ThanhToanVM model, string payment = "COD")
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var idkh = int.Parse(HttpContext.User.Claims.SingleOrDefault(x => x.Type == MySetting.CLAIM_CUSTOMERID).Value);
-
-        //        // Lấy giảm giá tổng từ Session
-        //        double tongTien = Cart.Sum(p => p.ThanhTien);
-        //        double giamGiaTong = 0;
-        //        if (!string.IsNullOrEmpty(HttpContext.Session.GetString("GIAMGIA")))
-        //        {
-        //            giamGiaTong = Convert.ToDouble(HttpContext.Session.GetString("GIAMGIA"));
-        //        }
-
-        //        // Tính tổng tiền sau giảm
-        //        double tongTienSauGiam = tongTien - giamGiaTong;
-
-        //        var coupon = HttpContext.Session.Get<MaGiamGium>("COUPON");
-        //        if (coupon != null)
-        //        {
-        //            // Giảm số lượng mã
-        //            var dbCoupon = _context.MaGiamGia.FirstOrDefault(x => x.IdMaGiamGia == coupon.IdMaGiamGia);
-        //            if (dbCoupon != null && dbCoupon.SoLuong > 0)
-        //            {
-        //                dbCoupon.SoLuong -= 1;
-        //                _context.Update(dbCoupon);
-        //            }
-        //        }
-
-
-        //        // Xóa session coupon sau thanh toán
-        //        HttpContext.Session.Remove("COUPON");
-        //        HttpContext.Session.Remove("GIAMGIA");
-        //        HttpContext.Session.Remove("TONGTIEN_SAUGIAM");
-
-
-
-
-        //        var hoadon = new DonHang
-        //        {
-        //            IdKh = idkh,
-        //            TenKh = model.TenKH,
-        //            DiaChi = model.DiaChi,
-        //            SoDienThoai = model.SoDienThoai,
-        //            NgayTao = DateTime.Now,
-        //            CachVanChuyen = "GRAB",
-        //            MaTrangThai = "Đang Xác Nhận",
-        //            GhiChu = model.GhiChu,
-        //            PhuongThucTraTien = payment == "Thanh toán VNPay" ? "VNPAY" : "COD"
-        //        };
-
-        //        if (payment == "Thanh toán VNPay")
-        //        {
-        //            var vnPayModel = new VnPayRequestModel
-        //            {
-        //                Amount = tongTienSauGiam, // dùng tổng tiền sau giảm
-        //                CreatedDate = DateTime.Now,
-        //                Description = $"{model.TenKH} {model.SoDienThoai}",
-        //                FullName = model.TenKH,
-        //                OrderId = hoadon.IdDonHang,
-        //            };
-        //            return Redirect(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
-        //        }
-        //        using (var transaction = _context.Database.BeginTransaction())
-        //        {
-        //            try
-        //            {
-        //                _context.Add(hoadon);
-        //                _context.SaveChanges();
-
-        //                // Phân bổ giảm giá cho từng sản phẩm
-        //                var cthds = new List<ChiTietDonHang>();
-        //                foreach (var item in Cart)
-        //                {
-        //                    // Tính tỷ lệ giảm giá trên mỗi sản phẩm
-        //                    double tyLe = item.ThanhTien / tongTien;
-        //                    double giamGiaSP = Math.Round(giamGiaTong * tyLe, 0); // làm tròn tiền giảm
-
-        //                    cthds.Add(new ChiTietDonHang
-        //                    {
-        //                        IdDonHang = hoadon.IdDonHang,
-        //                        SoLuong = item.SoLuong,
-        //                        DonGia = item.DonGia,
-        //                        IdSp = item.IdSp,
-        //                        ThanhTien = item.ThanhTien - giamGiaSP, // thành tiền sau giảm
-        //                        //GiamGia = giamGiaSP                    // lưu giảm giá
-        //                    });
-        //                }
-
-        //                _context.ChiTietDonHangs.AddRange(cthds);
-        //                _context.SaveChanges();
-
-        //                HttpContext.Session.Set<List<GioHangVM>>(MySetting.CART_KEY, new List<GioHangVM>());
-        //                transaction.Commit();
-        //                return View("ThanhCong");
-        //            }
-        //            catch
-        //            {
-        //                transaction.Rollback();
-        //                TempData["Message"] = "Có lỗi xảy ra khi lưu đơn hàng.";
-        //                return RedirectToAction("PaymentFail");
-        //            }
-        //        }
-        //    }
-        //    return View(Cart);
-        //}
         [Authorize]
         [HttpPost]
         public IActionResult ThanhToan(ThanhToanVM model, string payment = "COD")

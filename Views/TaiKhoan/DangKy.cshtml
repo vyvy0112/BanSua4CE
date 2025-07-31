@@ -101,13 +101,14 @@
                 <input asp-for="@Model.MatKhau" type="password" class="form-control" placeholder="Nhập mật khẩu" />
                 <span asp-validation-for="MatKhau" class="text-danger"></span>
             </div>
+            <div class="button-group mt-3">
+                <button type="submit" class="btn btn-primary">Đăng Ký</button>
+                <a asp-action="DangNhap" asp-controller="TaiKhoan" class="btn btn-outline-primary">Đăng Nhập</a>
+            </div>
         </form>
 
 
-        <div class="button-group mt-3">
-            <button type="submit" class="btn btn-primary">Đăng Ký</button>
-            <a asp-action="DangNhap" asp-controller="TaiKhoan" class="btn btn-outline-primary">Đăng Nhập</a>
-        </div>
+        
 
     </div>
 

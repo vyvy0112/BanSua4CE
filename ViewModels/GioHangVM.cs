@@ -1,4 +1,6 @@
-﻿namespace BanSua4CE.ViewModels
+﻿using BanSua4CE.Data;
+
+namespace BanSua4CE.ViewModels
 {
     public class GioHangVM
     {
@@ -20,5 +22,8 @@
         public int? IdSp { get; set; }
 
         public int? IdDonHang { get; set; }
+
+
+        public List<MaGiamGium> MaGiamGiaApDung { get; set; }
     }
 }
